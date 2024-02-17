@@ -20,7 +20,7 @@ To run the project on localhost
 # LIST OF DEPENDENCIES :-
 
 npm install framer-motion :- 
-To create an animated image showcasing your work in React.js, you can use libraries like Framer Motion or CSS animations. Here's a basic example using Framer Motion
+To create an animated image showcasing your work in React.js, you can use libraries like Framer Motion or CSS animations.
 
 npm install chart.js :- 
 To create a work experience chart in React.js, you can use a library like Chart.js to visualize the data.
@@ -36,10 +36,10 @@ npm install react-circular-progressbar :-
 To Debug The errors on This Project ( if found )
 
 npm install axios :- 
-(install only if required) my contribution-api got expired while building this project you can use yours  .
+(install only if required) my contribution-api got expired while building this project. Perhaps, you can use yours.
 
 npm audit fix :- 
 attempts to automatically fix any vulnerabilities detected in the project and its dependencies
 
 npm i react-chartjs-2 :- 
-Sometimes React Doesn’t install this repo while running chart.js happen with me one time hence, this is an alternative method to install that repo. For more info visit (https://www.npmjs.com/package/react-chartjs-2)
+Sometimes React Doesn’t install this repo while running chart.js (happened with me one time ). Hence, this is an alternative method to install that repo. For more info visit (https://www.npmjs.com/package/react-chartjs-2)
