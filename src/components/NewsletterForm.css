@@ -1,0 +1,40 @@
+/* NewsletterForm.css */
+.newsletter-form {
+    max-width: 400px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  
+  .newsletter-form h2 {
+    margin-bottom: 20px;
+  }
+  
+  .newsletter-form input,
+  .newsletter-form textarea,
+  .newsletter-form button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+  }
+  
+  .newsletter-form button {
+    background-color: #0084ff88;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .s-bar{
+    zoom:90%;
+    border-radius: 2.5em;
+    background:#0000002a;
+    padding-right: 3.9em;
+    width: 2.5em;
+    bottom: 20;
+  }
+ 

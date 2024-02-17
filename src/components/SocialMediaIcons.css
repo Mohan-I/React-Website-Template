@@ -1,0 +1,18 @@
+.social-media-icons {
+    display: flex;
+    align-items: center;
+    padding-inline-start: 1.2em;
+    
+    width:auto;
+  }
+  
+  .social-media-icons a {
+    margin-right: 10px; /* Adjust margin between icons */
+  }
+  
+  .social-media-icons img {
+    width: 40px; /* Adjust width of icons */
+    height: 40px; /* Adjust height of icons */
+    box-shadow: rgba(128, 128, 128, 0.4) 0px 30px 90px;
+  }
+  

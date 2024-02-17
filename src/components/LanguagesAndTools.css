@@ -1,0 +1,56 @@
+.languages-and-tools {
+    margin-top: 20px;
+    padding: 1.0em;
+    padding-left: 5%;
+    zoom:85%;
+  }
+  
+  .items {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .item {
+    display: flex;
+    margin-right: 0.3em; /* Adjust margin between items */
+    margin-bottom: 1.0em; /* Adjust margin between rows */
+  }
+  
+  .item img {
+    width: 30%; /* Adjust width of images */
+    height: auto;
+    margin-right: 10px; /* Adjust margin between image and details */
+  }
+  
+  .details {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .percentage-bar {
+    width: 100px; /* Adjust width of percentage bar */
+    height: 10px; /* Adjust height of percentage bar */
+    background-color: #ccc;
+    margin-bottom: 5px; /* Adjust margin between percentage bar and text */
+    box-shadow: rgb(38, 38, 255) 0px 30px 60px -12px inset, rgb(255, 0, 0) 0px 18px 36px -18px inset;
+  }
+  
+  .percentage {
+    height: 100%;
+    background-color: #007bff; /* Adjust color of percentage fill */
+  }
+  
+  .lang{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+  }
+
+  .percent{
+    font-family: Consolas, sans-serif;
+  }
+
+  .writer2{
+    font-size: 2.0em;
+    font-style: oblique;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    padding: 0.4em;
+  }

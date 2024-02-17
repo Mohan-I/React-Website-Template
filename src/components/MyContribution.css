@@ -1,0 +1,18 @@
+/* MyContribution.css */
+.my-contribution {
+  display: flex;
+  text-align: center;
+  margin-bottom: 20px;
+  zoom:75%;
+}
+
+.progress-bar-container {
+  width: 150px;
+  height: 150px;
+  margin: 0 auto;
+}
+
+.progress-text {
+  font-size: 20px;
+  color: #007bff;
+}

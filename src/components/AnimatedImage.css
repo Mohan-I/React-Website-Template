@@ -1,0 +1,13 @@
+.animated-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 300px; /* Adjust height as needed */
+  }
+  
+  .animated-image img {
+    width: 100%;
+    max-width: 400px; /* Adjust max-width as needed */
+    height: auto;
+  }
+  

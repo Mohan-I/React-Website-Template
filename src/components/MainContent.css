@@ -1,0 +1,23 @@
+.main-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .template-info {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .template-images {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .template-images img {
+    width: 30%; /* Adjust width of images */
+    height: auto;
+    margin: 0 10px; /* Adjust margin between images */
+  }
+  

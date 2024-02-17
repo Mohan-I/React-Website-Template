@@ -1,0 +1,28 @@
+.my-stats {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .chart-container {
+    width: 80%;
+    max-width: 200px; /* Adjust max-width as needed */
+    margin-bottom: 20px;
+  }
+  
+  .icons {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+  }
+  
+  .icon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .icon p {
+    margin-top: 5px;
+  }
+  
