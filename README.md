@@ -9,10 +9,15 @@ Currently, two official plugins are available:
 
 //////////////////////////////////////////////////////////////////////////////
 
-To Run This Project
+# To Run This Project
 
 npm install
 To install node_modules
+
+npm run dev
+To run the project on localhost
+
+# LIST OF DEPENDENCIES :-
 
 npm install framer-motion
 To create an animated image showcasing your work in React.js, you can use libraries like Framer Motion or CSS animations. Here's a basic example using Framer Motion
@@ -23,8 +28,7 @@ To create a work experience chart in React.js, you can use a library like Chart.
 npm install chart.js react-icons
 A "My Stats" component with a pie chart and icons in React.js, you can use a library like Chart.js for the pie chart and include icons from a library like React Icons.
 
-npm run dev
-To run the project on localhost
+
 
 npm install react-circular-progressbar
  A circular progressbar component, built with SVG and extensively customizable : In order to use MyContribution.jsx Component (install only if required) 
