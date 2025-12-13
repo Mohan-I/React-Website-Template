@@ -1,0 +1,136 @@
+/*
+ * This CSS file contains the utility classes extracted from the JSX.
+ * In a real-world project using Tailwind CSS, these would be managed 
+ * by the Tailwind framework and its utility output.
+ */
+
+/* General Layout Classes */
+.component-container {
+    padding: 4rem;
+}
+
+.container {
+    /* Corresponds to: container */
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+.px-4 { padding-left: 1rem; padding-right: 1rem; }
+.sm\:px-6 { /* @media (min-width: 640px) */ padding-left: 1.5rem; padding-right: 1.5rem; }
+.lg\:px-8 { /* @media (min-width: 1024px) */ padding-left: 2rem; padding-right: 2rem; }
+.mx-auto { margin-left: auto; margin-right: auto; }
+.max-w-7xl { max-width: 80rem; }
+.grid { display: grid; }
+.grid-cols-1 { grid-template-columns: repeat(1, minmax(0, 1fr)); }
+.lg\:grid-cols-12 { /* @media (min-width: 1024px) */ grid-template-columns: repeat(12, minmax(0, 1fr)); }
+.gap-x-6 { column-gap: 1.5rem; }
+.gap-y-8 { row-gap: 2rem; }
+.lg\:max-w-none { /* @media (min-width: 1024px) */ max-width: none; }
+.lg\:col-span-4 { /* @media (min-width: 1024px) */ grid-column: span 4 / span 4; }
+.lg\:col-span-3 { /* @media (min-width: 1024px) */ grid-column: span 3 / span 3; }
+.lg\:col-span-5 { /* @media (min-width: 1024px) */ grid-column: span 5 / span 5; }
+.lg\:order-last { /* @media (min-width: 1024px) */ order: 9999; }
+.w-full { width: 100%; }
+.h-12 { height: 3rem; }
+.w-12 { width: 3rem; }
+.shrink-0 { flex-shrink: 0; }
+.inset-0 { top: 0; right: 0; bottom: 0; left: 0; }
+.absolute { position: absolute; }
+.relative { position: relative; }
+.overflow-hidden { overflow: hidden; }
+
+/* Flex/Grid and Alignment */
+.flex { display: flex; }
+.items-center { align-items: center; }
+.items-start { align-items: flex-start; }
+.lg\:items-center { /* @media (min-width: 1024px) */ align-items: center; }
+.justify-center { justify-content: center; }
+.self-center { align-self: center; }
+.self-end { align-self: flex-end; }
+
+/* Colors and Backgrounds */
+.bg-gradient-to-b { background-image: linear-gradient(to bottom, var(--tw-gradient-stops)); }
+.from-gray-50 { --tw-gradient-from: #f9fafb; --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgba(249, 250, 251, 0)); }
+.via-white { --tw-gradient-stops: var(--tw-gradient-from), #fff, var(--tw-gradient-to, rgba(255, 255, 255, 0)); }
+.to-gray-50 { --tw-gradient-to: #f9fafb; }
+
+.bg-gradient-to-r { background-image: linear-gradient(to right, var(--tw-gradient-stops)); }
+.from-\[\#44BCFF\] { --tw-gradient-from: #44BCFF; --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgba(68, 188, 255, 0)); }
+.via-\[\#FF44EC\] { --tw-gradient-stops: var(--tw-gradient-from), #FF44EC, var(--tw-gradient-to, rgba(255, 68, 236, 0)); }
+.to-\[\#FF675E\] { --tw-gradient-to: #FF675E; }
+
+.bg-indigo-600 { background-color: #4f46e5; }
+.hover\:bg-indigo-700:hover { background-color: #4338ca; }
+
+.text-gray-900 { color: #111827; }
+.text-gray-500 { color: #6b7280; }
+.text-white { color: #fff; }
+
+/* Typography */
+.text-3xl { font-size: 1.875rem; line-height: 2.25rem; }
+.sm\:text-4xl { /* @media (min-width: 640px) */ font-size: 2.25rem; line-height: 2.5rem; }
+.xl\:text-5xl { /* @media (min-width: 1280px) */ font-size: 3rem; line-height: 1; }
+.text-base { font-size: 1rem; line-height: 1.5rem; }
+.text-xs { font-size: 0.75rem; line-height: 1rem; }
+.sm\:text-sm { /* @media (min-width: 640px) */ font-size: 0.875rem; line-height: 1.25rem; }
+
+.font-bold { font-weight: 700; }
+.font-semibold { font-weight: 600; }
+.font-normal { font-weight: 400; }
+.uppercase { text-transform: uppercase; }
+.tracking-widest { letter-spacing: 0.1em; }
+.leading-7 { line-height: 1.75rem; }
+.leading-6 { line-height: 1.5rem; }
+
+/* Spacing */
+.pt-12 { padding-top: 3rem; }
+.lg\:pb-20 { /* @media (min-width: 1024px) */ padding-bottom: 5rem; }
+.px-8 { padding-left: 2rem; padding-right: 2rem; }
+.py-3 { padding-top: 0.75rem; padding-bottom: 0.75rem; }
+.sm\:py-3\.5 { /* @media (min-width: 640px) */ padding-top: 0.875rem; padding-bottom: 0.875rem; }
+
+.mt-5 { margin-top: 1.25rem; }
+.mt-9 { margin-top: 2.25rem; }
+.mt-6 { margin-top: 1.5rem; }
+.ml-5 { margin-left: 1.25rem; }
+
+.space-y-6 > * + * { margin-top: 1.5rem; }
+.lg\:space-y-8 > * + * { /* @media (min-width: 1024px) */ margin-top: 2rem; }
+
+
+/* Borders and Radius */
+.rounded-lg { border-radius: 0.5rem; }
+.rounded-xl { border-radius: 0.75rem; }
+.border { border-width: 1px; }
+.border-transparent { border-color: transparent; }
+
+/* Transitions and Filters */
+.transitiona-all { transition-property: all; }
+.transition-all { transition-property: all; transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); transition-duration: 150ms; }
+.duration-200 { transition-duration: 200ms; }
+.duration-1000 { transition-duration: 1000ms; }
+.blur-lg { filter: blur(16px); }
+.filter { filter: var(--tw-filter); } /* Assumes a basic filter reset */
+.opacity-70 { opacity: 0.7; }
+.group:hover .group-hover\:opacity-100 { opacity: 1; }
+
+/* Focus Rings */
+.focus\:outline-none:focus { outline: 2px solid transparent; outline-offset: 2px; }
+.focus\:ring-2:focus { --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color); --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color); box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000); }
+.focus\:ring-offset-2:focus { --tw-ring-offset-width: 2px; }
+.focus\:ring-indigo-600:focus { --tw-ring-color: #4f46e5; }
+
+/* Object Fit (as requested) */
+.object-cover { object-fit: cover; }
+
+/* Custom utility class used to replace Alpine.js (as requested) */
+.mobile-menu {
+    /* Start collapsed */
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-in-out;
+}
+.mobile-menu.is-expanded {
+    /* Expanded state (adjust max-height to a value larger than content) */
+    max-height: 500px; /* Needs to be large enough to contain the content */
+}
