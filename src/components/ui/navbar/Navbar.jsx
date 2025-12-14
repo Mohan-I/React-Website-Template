@@ -67,7 +67,7 @@ function Navbar() {
             <a 
               key={item.label}
               href={item.href} 
-              className="nav-link"
+              className="nav-link font-mindscape"
               onClick={handleLinkClick}
             >
               {item.label}

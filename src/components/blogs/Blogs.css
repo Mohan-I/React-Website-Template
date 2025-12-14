@@ -1,28 +1,129 @@
+/* Assume these variables are available from your global CSS setup */
+:root {
+    --color-dark-bg: #030312;
+    --color-primary-neon: #00e0ff; /* Blue Neon */
+    --color-secondary-neon: #9d4edd; /* Purple Neon */
+    --color-text-light: #e0f7ff; 
+    --color-subtle-text: #8a94b5; 
+    --color-module-bg: rgba(5, 5, 20, 0.9);
+}
+
 .blogs {
+    /* Use a dark, contained grid for the "Archive" look */
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;
-    padding:8%;
-  }
-  
-  .blog-post {
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    padding: 20px;
-    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
-  }
-  
-  .blog-post img {
+    gap: 30px; /* Increased gap */
+    padding: 8% 5%;
+    background-color: transparent; /* Let the body handle the background */
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.blog-post {
+    /* Data Block / Module Styling */
+    position: relative;
+    background-color: var(--color-module-bg);
+    border: 2px solid rgba(0, 224, 255, 0.2); /* Subtle frame */
+    border-radius: 12px;
+    padding: 30px;
+    
+    /* Neon Shadow/Glow (Subtle) */
+    box-shadow: 0 0 15px rgba(0, 224, 255, 0.1); 
+    color: var(--color-text-light);
+    overflow: hidden;
+
+    /* Transition for hover and animation */
+    transition: all 0.4s ease-in-out; 
+    cursor: pointer;
+}
+
+/* Hover Effect: Increased Glow and Lift */
+.blog-post:hover {
+    border-color: var(--color-primary-neon);
+    box-shadow: 0 0 30px var(--color-primary-neon);
+    transform: translateY(-5px) scale(1.01);
+}
+
+/* --- Content Styling --- */
+
+.blog-post img {
+    /* Image as a holographic display */
     width: 100%;
-    height: auto;
-    border-radius: 10px;
+    height: 200px; /* Fixed height for uniformity */
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    
+    /* Add a subtle image glow/frame */
+    border: 1px solid var(--color-secondary-neon);
+    box-shadow: 0 0 10px rgba(157, 77, 221, 0.5);
+    transition: all 0.3s;
+}
+
+.blog-post h2 {
+    font-size: 1.6em;
+    color: var(--color-primary-neon);
     margin-bottom: 10px;
-    align-items: center;
-  }
-  
-  .blog-post h2 {
-    margin-bottom: 10px;
-  }
-  
- 
-  
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+.blog-content {
+    font-size: 1em;
+    color: var(--color-subtle-text);
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+/* --- Footer and Read More Link --- */
+.blog-footer {
+    padding-top: 15px;
+    border-top: 1px solid rgba(0, 224, 255, 0.1);
+    text-align: right;
+}
+
+.read-more {
+    font-size: 0.9em;
+    color: var(--color-secondary-neon);
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+.read-more:hover {
+    color: var(--color-primary-neon);
+    text-shadow: 0 0 5px var(--color-primary-neon);
+}
+
+
+/* --- Sci-Fi Entry Animations (Staggered) --- */
+
+@keyframes slideIn {
+    from { opacity: 0; transform: translateY(50px) scale(0.9); }
+    to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.animate-card-in {
+    opacity: 0; /* Hidden initially */
+    animation: slideIn 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+/* Delay Utility Classes */
+.delay-0 { animation-delay: 0.1s; }
+.delay-1 { animation-delay: 0.2s; }
+.delay-2 { animation-delay: 0.3s; }
+.delay-3 { animation-delay: 0.4s; }
+.delay-4 { animation-delay: 0.5s; }
+/* Add more delays if you expect more posts */
+.delay-5 { animation-delay: 0.6s; }
+.delay-6 { animation-delay: 0.7s; }
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .blogs {
+        padding: 5% 5%;
+        gap: 20px;
+    }
+    .blog-post {
+        padding: 20px;
+    }
+}

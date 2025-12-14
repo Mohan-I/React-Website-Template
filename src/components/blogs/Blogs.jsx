@@ -7,7 +7,8 @@ function Blogs({ posts }) {
   return (
     <div className="blogs">
       {posts.map((post, index) => (
-        <BlogPost key={index} post={post} />
+        // Add index to BlogPost to calculate animation delay
+        <BlogPost key={index} post={post} index={index} /> 
       ))}
     </div>
   );

@@ -1,40 +1,253 @@
-/* NewsletterForm.css */
-.newsletter-form {
-    max-width: 400px;
+/* ========================================================================= */
+/* 1. LAYOUT & FRAMEWORK STYLES                                              */
+/* ========================================================================= */
+
+.sci-fi-section {
+    /* Full width, dark background for contrast */
+    padding: 4rem 1rem;
+    background-color: #0d1117; /* GitHub Dark/Deep Space */
+    color: #c9d1d9; /* Light gray text */
+    font-family: 'Consolas', 'Courier New', monospace; /* Terminal Font */
+}
+
+.data-portal-frame {
+    max-width: 600px;
     margin: 0 auto;
-    text-align: center;
-  }
-  
-  .newsletter-form h2 {
-    margin-bottom: 20px;
-  }
-  
-  .newsletter-form input,
-  .newsletter-form textarea,
-  .newsletter-form button {
-    display: block;
+    padding: 2rem;
+    background: rgba(18, 24, 30, 0.85); /* Slightly lighter dark background */
+    border: 1px solid #00ffff44; /* Light cyan border */
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.2), inset 0 0 10px rgba(0, 255, 255, 0.1); /* Subtle neon glow */
+    border-radius: 6px;
+    position: relative;
+    /* Diagonal Line effect (optional) */
+    overflow: hidden;
+}
+
+/* Diagonal scanning lines effect */
+.data-portal-frame::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
-    padding: 10px;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    box-sizing: border-box;
-  }
-  
-  .newsletter-form button {
-    background-color: #0084ff88;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
+    height: 100%;
+    background: repeating-linear-gradient(
+        -45deg,
+        transparent,
+        transparent 5px,
+        rgba(0, 255, 255, 0.03) 5px,
+        rgba(0, 255, 255, 0.03) 6px
+    );
+    z-index: 0;
+    pointer-events: none;
+}
+
+.portal-inner-content {
+    position: relative;
+    z-index: 1;
+}
+
+/* ========================================================================= */
+/* 2. TYPOGRAPHY & HEADERS                                                   */
+/* ========================================================================= */
+
+.form-title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+    color: #44eeff; /* Cyan for main heading */
+}
+
+.sci-fi-glow-text {
+    text-shadow: 0 0 8px rgba(68, 238, 255, 0.8);
+}
+
+.form-subtitle {
+    font-size: 0.9rem;
+    margin-bottom: 2rem;
+    color: #9aa5b1; /* Terminal gray text */
+}
+
+.text-terminal-gray {
+    color: #a0a0a0;
+}
+
+/* ========================================================================= */
+/* 3. FORM ELEMENTS (INPUTS)                                                 */
+/* ========================================================================= */
+
+.form-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.input-label {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    color: #00ffaa; /* Neon green/aqua label */
+    margin-bottom: 0.3rem;
+    letter-spacing: 1px;
+}
+
+.input-field-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.form-input,
+.form-textarea {
+    width: 100%;
+    padding: 0.75rem 0.75rem 0.75rem 2.5rem; /* Space for the icon */
+    border: 1px solid #44eeff33; /* Light cyan border */
+    background-color: #0a0e14; /* Very dark input background */
+    color: #00ffaa; /* Neon green input text */
+    font-size: 1rem;
+    transition: border-color 0.3s, box-shadow 0.3s;
+    border-radius: 4px;
+}
+
+.form-input:focus,
+.form-textarea:focus {
+    outline: none;
+    border-color: #00ffff;
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.5); /* Glowing focus effect */
+    background-color: #0d1117;
+}
+
+.form-input::placeholder,
+.form-textarea::placeholder {
+    color: #555e6b; /* Subdued placeholder text */
+}
+
+.input-icon {
+    position: absolute;
+    left: 10px;
+    font-size: 1.2rem;
+    color: #00ffff;
+    pointer-events: none;
+    /* Optional: Hide the emoji icon and use CSS-generated content for pure sci-fi look */
+    display: none; 
+}
+/* Replicating icons with pure CSS for a consistent look */
+.input-field-wrapper::before {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #00ffff;
+    font-size: 1.1rem;
+    content: '';
+    z-index: 2;
+}
+
+.icon-email::before { content: '>'; }
+.icon-name::before { content: '$'; }
+.icon-interests::before { content: '#'; }
+
+/* Error Styling */
+.input-error {
+    border-color: #ff44aa !important; /* Magenta/Pink error color */
+    box-shadow: 0 0 10px rgba(255, 68, 170, 0.5);
+}
+
+.error-text {
+    font-size: 0.8rem;
+    color: #ff44aa; /* Magenta/Pink error color */
+    margin-top: 0.5rem;
+    text-shadow: 0 0 5px rgba(255, 68, 170, 0.4);
+    letter-spacing: 0.5px;
+}
+
+/* ========================================================================= */
+/* 4. SUBMIT BUTTON (CTA)                                                    */
+/* ========================================================================= */
+
+.submit-button {
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    font-weight: 700;
+    text-transform: uppercase;
     cursor: pointer;
-  }
-  
-  .s-bar{
-    zoom:90%;
-    border-radius: 2.5em;
-    background:#0000002a;
-    padding-right: 3.9em;
-    width: 2.5em;
-    bottom: 20;
-  }
- 
+    border: 2px solid #00ffaa;
+    background: transparent;
+    color: #00ffaa;
+    border-radius: 4px;
+    margin-top: 1rem;
+    transition: all 0.3s ease;
+    letter-spacing: 2px;
+}
+
+.cta-transmit:hover {
+    background: #00ffaa;
+    color: #0d1117;
+    box-shadow: 0 0 15px #00ffaa, 0 0 30px rgba(0, 255, 170, 0.4);
+}
+
+/* ========================================================================= */
+/* 5. ALERT MESSAGES                                                         */
+/* ========================================================================= */
+
+.alert-message {
+    padding: 1rem;
+    border-radius: 4px;
+    margin-bottom: 1.5rem;
+    font-weight: bold;
+    font-size: 0.9rem;
+    text-align: center;
+    overflow: hidden; /* For slide down animation */
+}
+
+.alert-message.success {
+    background-color: rgba(0, 255, 170, 0.1);
+    color: #00ffaa;
+    border: 1px solid #00ffaa;
+    box-shadow: 0 0 10px rgba(0, 255, 170, 0.4);
+}
+
+.alert-message.error {
+    background-color: rgba(255, 68, 170, 0.1);
+    color: #ff44aa;
+    border: 1px solid #ff44aa;
+    box-shadow: 0 0 10px rgba(255, 68, 170, 0.4);
+}
+
+/* ========================================================================= */
+/* 6. ANIMATIONS                                                             */
+/* ========================================================================= */
+
+/* Fade In (for form load) */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+.animate-fade-in {
+    animation: fadeIn 0.8s ease-out forwards;
+}
+
+/* Slide Down (for alert messages) */
+@keyframes slideDown {
+    from { max-height: 0; padding-top: 0; padding-bottom: 0; opacity: 0; }
+    to { max-height: 500px; padding-top: 1rem; padding-bottom: 1rem; opacity: 1; } /* Use max-height for smooth transition */
+}
+.animate-slide-down {
+    animation: slideDown 0.4s ease-out forwards;
+    max-height: 0; /* Initial state before animation */
+}
+
+/* Pop In (for submit button) */
+@keyframes popIn {
+    0% { transform: scale(0.9); opacity: 0; }
+    80% { transform: scale(1.05); opacity: 1; }
+    100% { transform: scale(1); opacity: 1; }
+}
+.animate-pop-in {
+    animation: popIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}

@@ -1,40 +1,314 @@
-.pricing-plans {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
+:root {
+    /* Define Sci-Fi Neon Colors */
+    --color-blue: #00e0ff;
+    --color-purple: #9d4edd;
+    --color-red: #ff4d6d;
+    --color-dark: #0a0a2a; /* Deep space background */
+    --color-text: #ffffff;
+    --color-subtle: #8a94b5; /* Light blue-grey for subtle text */
 }
+
+/* Base Container and Background */
+.pricing-plans {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 80px 20px;
+    min-height: 100vh;
+    /* Simulate the dark, starry background from the image */
+    background: 
+        radial-gradient(ellipse at center, rgba(16, 16, 36, 0.8) 0%, var(--color-dark) 100%),
+        url('https://i.imgur.com/your-starfield-image.jpg') no-repeat center center; /* Replace with actual starfield/grid background image path */
+    background-size: cover;
+    font-family: 'Space Mono', monospace; /* Use a futuristic font */
+    color: var(--color-text);
+}
+
+.pricing-title {
+    font-size: 3em;
+    font-weight: 700;
+    margin-bottom: 60px;
+    /* Neon glow effect for title */
+    text-shadow: 0 0 10px rgba(0, 224, 255, 0.5), 0 0 20px rgba(0, 224, 255, 0.3);
+}
+
+.plans-container {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+    max-width: 1400px;
+}
+
+/* --- Plan Card Styling (The 'Screen' Effect) --- */
 
 .plan {
-  width: 300px;
-  padding: 20px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  text-align: center;
+    position: relative;
+    width: 330px;
+    padding: 40px 30px;
+    border-radius: 20px;
+    text-align: center;
+    
+    /* Dark translucent glass/screen effect */
+    background-color: rgba(10, 10, 40, 0.85); 
+    border: 2px solid; 
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    
+    /* Standard Plan: Blue Neon Theme */
+    border-color: rgba(0, 224, 255, 0.4); 
+    box-shadow: 0 0 15px rgba(0, 224, 255, 0.1);
+
+    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
+/* Hover effect: Increased glow */
+.plan:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 0 30px var(--color-blue);
+    border-color: var(--color-blue);
+}
+
+/* Highlighted Plan: Purple Neon Theme (Most Popular) */
+.plan-popular {
+    transform: scale(1.05); /* Stays slightly larger */
+    border-color: var(--color-purple);
+    box-shadow: 0 0 35px var(--color-purple);
+    z-index: 10;
+}
+
+.plan-popular:hover {
+    box-shadow: 0 0 45px var(--color-purple);
+    transform: translateY(-5px) scale(1.06);
+}
+
+/* Enterprise Plan Specific Red Border/Glow */
+.plans-container > :nth-child(3) {
+    border-color: rgba(255, 77, 109, 0.4);
+    box-shadow: 0 0 15px rgba(255, 77, 109, 0.1);
+}
+.plans-container > :nth-child(3):hover {
+    box-shadow: 0 0 30px var(--color-red);
+    border-color: var(--color-red);
+}
+
+
+/* --- Popular Tag --- */
+.tag-popular {
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--color-purple);
+    color: var(--color-dark);
+    font-size: 0.9em;
+    font-weight: bold;
+    padding: 5px 18px;
+    border-radius: 9999px;
+    box-shadow: 0 0 15px var(--color-purple);
+    text-shadow: none; /* No self-shadow on tag text */
+}
+
+/* --- Typography and Content --- */
+
 .plan h2 {
-  margin-bottom: 10px;
+    font-size: 1.5em;
+    margin-bottom: 5px;
+    font-weight: 600;
+}
+
+/* Neon Text Coloring */
+.text-neon-standard { color: var(--color-blue); }
+.text-neon-popular { color: var(--color-purple); }
+.plans-container > :nth-child(3) h2 { color: var(--color-red); }
+
+.description {
+    font-size: 0.9em;
+    color: var(--color-subtle);
+    margin-bottom: 25px;
+    height: 3em; /* Fix height for alignment */
 }
 
 .price {
-  font-size: 24px;
-  font-weight: bold;
+    font-size: 3.5em;
+    font-weight: 800;
+    color: var(--color-text);
+    margin: 20px 0 30px 0;
+    /* Price neon glow */
+    text-shadow: 0 0 10px var(--color-blue), 0 0 20px var(--color-blue);
 }
 
-ul {
-  list-style: none;
-  padding: 0;
+.plan-popular .price {
+    text-shadow: 0 0 10px var(--color-purple), 0 0 20px var(--color-purple);
+}
+.plans-container > :nth-child(3) .price {
+    text-shadow: 0 0 10px var(--color-red), 0 0 20px var(--color-red);
 }
 
-ul li {
-  margin-bottom: 10px;
+
+/* --- Features List --- */
+.features-list {
+    list-style: none;
+    padding: 0;
+    text-align: left;
+    margin-bottom: 40px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-button {
-  background-color: #007bff;
-  color: #fff;
-  border: none;
-  border-radius: 5px;
-  padding: 10px 20px;
-  cursor: pointer;
+.features-list li {
+    display: flex;
+    align-items: center;
+    font-size: 0.95em;
+    color: var(--color-subtle);
+    padding: 12px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.check-icon {
+    width: 20px;
+    height: 20px;
+    color: var(--color-blue); /* Default checkmark color */
+    margin-right: 15px;
+    min-width: 20px;
+}
+/* Feature icon coloring based on plan */
+.plan-popular .check-icon { color: var(--color-purple); }
+.plans-container > :nth-child(3) .check-icon { color: var(--color-red); }
+
+
+/* --- Buttons --- */
+.button-standard, .button-popular {
+    width: 100%;
+    border: none;
+    border-radius: 8px;
+    padding: 14px 20px;
+    font-size: 1.1em;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+}
+
+.button-standard {
+    background-color: var(--color-blue);
+    color: var(--color-dark);
+    box-shadow: 0 0 15px var(--color-blue);
+}
+
+.button-standard:hover {
+    background-color: #00f0ff;
+    transform: translateY(-2px);
+    box-shadow: 0 0 25px #00f0ff;
+}
+
+.button-popular {
+    background-color: var(--color-purple);
+    color: var(--color-text);
+    box-shadow: 0 0 20px var(--color-purple);
+}
+
+.button-popular:hover {
+    background-color: #aa50ff;
+    transform: translateY(-2px);
+    box-shadow: 0 0 30px #aa50ff;
+}
+/* Enterprise button uses the Red theme */
+.plans-container > :nth-child(3) button {
+    background-color: var(--color-red);
+    box-shadow: 0 0 15px var(--color-red);
+    color: var(--color-text);
+}
+.plans-container > :nth-child(3) button:hover {
+    background-color: #ff607f;
+    box-shadow: 0 0 25px #ff607f;
+}
+
+/* --- Central Futuristic Icons (Simulated) --- */
+.plan-icon-container {
+    width: 100px;
+    height: 100px;
+    margin: 0 auto 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.simulated-icon {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    /* General icon effect */
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, rgba(0, 0, 0, 0) 70%);
+    animation: pulse 3s infinite alternate;
+}
+
+/* Basic Plan Icon (Blue) */
+.icon-basic .simulated-icon {
+    border: 3px solid var(--color-blue);
+    box-shadow: 0 0 20px var(--color-blue);
+}
+/* Popular Plan Icon (Purple Circuit) */
+.icon-popular .simulated-icon {
+    border: 3px solid var(--color-purple);
+    box-shadow: 0 0 25px var(--color-purple);
+    border-radius: 5px; /* Use a slightly different shape */
+    background-image: repeating-linear-gradient(45deg, var(--color-purple) 0, var(--color-purple) 1px, transparent 1px, transparent 10px);
+}
+/* Enterprise Plan Icon (Red Cityscape) */
+.icon-enterprise .simulated-icon {
+    border: 3px solid var(--color-red);
+    box-shadow: 0 0 20px var(--color-red);
+    border-radius: 0; /* Square for city/data block theme */
+    background: linear-gradient(to top, rgba(255, 77, 109, 0.5) 0%, transparent 100%);
+}
+
+@keyframes pulse {
+    from { opacity: 0.8; transform: scale(1); }
+    to { opacity: 1; transform: scale(1.05); }
+}
+
+/* --- Animations (Reused from Original) --- */
+@keyframes slideUp {
+    from { opacity: 0; transform: translateY(40px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeDown {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Animation Utility Classes */
+.animate-fade-down {
+    animation: fadeDown 0.7s ease-out forwards;
+    opacity: 0;
+}
+
+.animate-slide-up {
+    animation: slideUp 0.7s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards; 
+    opacity: 0;
+}
+
+/* Delay Utility Classes for Staggered Animation */
+.delay-0 { animation-delay: 0.1s; }
+.delay-100 { animation-delay: 0.2s; }
+.delay-200 { animation-delay: 0.3s; }
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+    .plans-container {
+        gap: 25px;
+    }
+    .plan {
+        width: 90%;
+        max-width: 400px;
+        transform: none !important; /* Disable scale/translate on small screen */
+    }
+    .plan:hover {
+        transform: none !important;
+        box-shadow: 0 0 15px var(--color-blue); /* Subtle hover for mobile */
+    }
+    .plan-popular {
+         transform: none !important;
+    }
 }
