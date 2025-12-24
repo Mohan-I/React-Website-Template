@@ -1,5 +1,4 @@
 :root {
-    /* New Sci-Fi Theme Variables */
     --color-dark-bg: #030312; /* Deep space/black */
     --color-primary-neon: #00e0ff; /* Blue Neon */
     --color-secondary-neon: #9d4edd; /* Purple Neon */
@@ -7,15 +6,10 @@
     --color-subtle-text: #8a94b5; /* Light blue-grey for secondary elements */
 }
 
-/* --- Global Body Styles: Deep Space Background --- */
 body {
     margin: 0;
     padding: 0;
-    /* Use deep dark background */
     background-color: var(--color-dark-bg);
-    
-    /* Simulate a subtle, far-off starfield/grid pattern */
-    /* This effect is complex, so we'll use a subtle radial/conic gradient for depth */
     background-image: 
         radial-gradient(ellipse at bottom, rgba(5, 5, 20, 0.8) 0%, var(--color-dark-bg) 100%),
         /* Subtle glowing grid lines (if desired, use background-size to scale) */
@@ -76,21 +70,19 @@ body {
 
 /* --- Custom Sci-Fi Scrollbar --- */
 ::-webkit-scrollbar {
-    width: 8px; /* Slightly wider for better visibility */
+    width: 8px; 
 }
 
 ::-webkit-scrollbar-track {
-    background-color: var(--color-dark-bg); /* Dark track */
+    background-color: var(--color-dark-bg); 
 }
 
 ::-webkit-scrollbar-thumb { 
-    /* Use the primary neon color */
     background-color: var(--color-primary-neon); 
     border-radius: 8px;
-    /* Add a subtle shadow to give it a glow */
     box-shadow: 0 0 5px var(--color-primary-neon);
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background-color: #00ffff; /* Brighter color on hover */
+    background-color: #00ffff; 
 }

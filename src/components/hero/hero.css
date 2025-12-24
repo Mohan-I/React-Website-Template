@@ -1,522 +1,454 @@
+/* Sci-Fi Theme Variables */
+:root {
+  --neon-blue: #00f3ff;
+  --neon-purple: #b967ff;
+  --neon-pink: #ff00ff;
+  --dark-space: #0a0a1a;
+  --star-color: #ffffff;
+  --cyber-blue: #0066ff;
+  --hologram-green: #00ff9d;
+  --glow-intensity: 0.8;
+}
+
 .component-container {
-    padding: 2rem;
-    border: 2px solid #282828;
+  position: relative;
+  overflow: hidden;
+  min-height: 100vh;
+  background-color: var(--dark-space);
 }
 
+/* Parallax Background */
+.parallax-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background: 
+    radial-gradient(circle at 20% 30%, rgba(11, 10, 40, 0.8) 0%, transparent 50%),
+    radial-gradient(circle at 80% 70%, rgba(70, 0, 100, 0.6) 0%, transparent 50%),
+    linear-gradient(to bottom, #0a0a1a 0%, #101030 50%, #151540 100%);
+}
+
+.stars {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    radial-gradient(1px 1px at 20% 30%, var(--star-color) 50%, transparent 100%),
+    radial-gradient(1px 1px at 40% 70%, var(--star-color) 50%, transparent 100%),
+    radial-gradient(2px 2px at 60% 20%, var(--star-color) 50%, transparent 100%),
+    radial-gradient(1px 1px at 80% 50%, var(--star-color) 50%, transparent 100%);
+  background-size: 200px 200px, 300px 300px, 400px 400px, 500px 500px;
+  animation: twinkle 3s infinite alternate;
+}
+
+.nebula {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: 
+    radial-gradient(circle at 30% 20%, rgba(0, 243, 255, 0.1) 0%, transparent 40%),
+    radial-gradient(circle at 70% 80%, rgba(185, 103, 255, 0.15) 0%, transparent 40%),
+    radial-gradient(circle at 50% 50%, rgba(255, 0, 255, 0.1) 0%, transparent 50%);
+  filter: blur(60px);
+  animation: nebulaFloat 20s infinite ease-in-out;
+}
+
+/* Grid Overlay */
+.grid-overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    linear-gradient(rgba(0, 243, 255, 0.1) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 243, 255, 0.1) 1px, transparent 1px);
+  background-size: 50px 50px;
+  mask-image: radial-gradient(circle at center, black 20%, transparent 70%);
+  animation: gridPulse 4s infinite alternate;
+}
+
+/* Hero Section */
+.hero-section {
+  position: relative;
+  z-index: 1;
+}
+
+/* Container */
 .container {
-    /* Corresponds to: container */
-    width: 100%;
-    margin-left: auto;
-    margin-right: auto;
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Typography with Sci-Fi Style */
+.text-gradient {
+  background: linear-gradient(90deg, var(--neon-blue), var(--neon-purple), var(--neon-pink));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+  background-size: 200% auto;
+  animation: gradientShift 3s ease infinite;
+}
+
+.text-cyber {
+  font-family: 'Courier New', monospace;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+}
+
+/* Sci-Fi Button */
+.sci-fi-btn {
+  position: relative;
+  background: linear-gradient(45deg, var(--dark-space), #1a1a3a);
+  border: 1px solid var(--neon-blue);
+  color: var(--neon-blue);
+  padding: 0.75rem 1.5rem;
+  font-family: 'Courier New', monospace;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  cursor: pointer;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  border-radius: 4px;
+  font-weight: 600;
+  width: 100%;
+  max-width: 400px;
+}
+
+.sci-fi-btn:hover {
+  color: var(--neon-pink);
+  border-color: var(--neon-pink);
+  box-shadow: 
+    0 0 20px rgba(255, 0, 255, 0.5),
+    0 0 40px rgba(255, 0, 255, 0.3),
+    inset 0 0 20px rgba(255, 0, 255, 0.2);
+  transform: translateY(-2px);
+}
+
+.sci-fi-btn::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    45deg,
+    transparent 30%,
+    rgba(0, 243, 255, 0.1) 50%,
+    transparent 70%
+  );
+  transform: rotate(45deg);
+  animation: scan 2s linear infinite;
+}
+
+/* Card Styles */
+.sci-fi-card {
+  background: rgba(16, 16, 48, 0.6);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(0, 243, 255, 0.3);
+  border-radius: 8px;
+  padding: 1.25rem;
+  position: relative;
+  overflow: hidden;
+  height: 100%;
+}
+
+.sci-fi-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--neon-blue), transparent);
+  animation: borderScan 3s linear infinite;
+}
+
+/* Latest Picks Items */
+.pick-item {
+  position: relative;
+  padding: 0.75rem;
+  background: rgba(10, 10, 26, 0.7);
+  border-left: 3px solid var(--neon-blue);
+  transition: all 0.3s ease;
+  border-radius: 4px;
 }
 
-.px-4 {
-    padding-left: 1rem;
-    padding-right: 1rem;
+.pick-item:hover {
+  background: rgba(16, 16, 48, 0.9);
+  border-left-color: var(--neon-pink);
+  transform: translateX(10px);
 }
 
-.sm\:px-6 {
-    /* @media (min-width: 640px) */
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
+.pick-item img {
+  border: 1px solid rgba(0, 243, 255, 0.5);
+  box-shadow: 0 0 15px rgba(0, 243, 255, 0.3);
 }
 
-.lg\:px-8 {
-    /* @media (min-width: 1024px) */
-    padding-left: 2rem;
-    padding-right: 2rem;
+/* Author Image Container */
+.author-container {
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  border: 2px solid transparent;
+  background: linear-gradient(45deg, var(--neon-blue), var(--neon-purple), var(--neon-pink)) border-box;
+  -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+  mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  height: 100%;
+  min-height: 300px;
 }
 
-.mx-auto {
-    margin-left: auto;
-    margin-right: auto;
+.author-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
-.max-w-7xl {
-    max-width: 80rem;
+.author-container::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    45deg,
+    transparent 30%,
+    rgba(0, 243, 255, 0.1) 50%,
+    transparent 70%
+  );
+  animation: hologram 4s linear infinite;
 }
 
-.grid {
-    display: grid;
+/* Animations */
+@keyframes twinkle {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 1; }
 }
 
-.grid-cols-1 {
-    grid-template-columns: repeat(1, minmax(0, 1fr));
+@keyframes nebulaFloat {
+  0%, 100% { transform: translate(0, 0) rotate(0deg); }
+  33% { transform: translate(-10px, 10px) rotate(1deg); }
+  66% { transform: translate(10px, -10px) rotate(-1deg); }
 }
 
-.lg\:grid-cols-12 {
-    /* @media (min-width: 1024px) */
-    grid-template-columns: repeat(12, minmax(0, 1fr));
+@keyframes gridPulse {
+  0% { opacity: 0.2; }
+  100% { opacity: 0.5; }
 }
 
-.gap-x-6 {
-    column-gap: 1.5rem;
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
-.gap-y-8 {
-    row-gap: 2rem;
+@keyframes scan {
+  0% { transform: translateX(-100%) rotate(45deg); }
+  100% { transform: translateX(100%) rotate(45deg); }
 }
 
-.lg\:max-w-none {
-    /* @media (min-width: 1024px) */
-    max-width: none;
+@keyframes borderScan {
+  0% { left: -100%; }
+  100% { left: 100%; }
 }
 
-.lg\:col-span-4 {
-    /* @media (min-width: 1024px) */
-    grid-column: span 4 / span 4;
+@keyframes hologram {
+  0% { transform: translateX(-100%) rotate(45deg); opacity: 0; }
+  50% { opacity: 0.5; }
+  100% { transform: translateX(100%) rotate(45deg); opacity: 0; }
 }
 
-.lg\:col-span-3 {
-    /* @media (min-width: 1024px) */
-    grid-column: span 3 / span 3;
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
 }
 
-.lg\:col-span-5 {
-    /* @media (min-width: 1024px) */
-    grid-column: span 5 / span 5;
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
 }
 
-.lg\:order-last {
-    /* @media (min-width: 1024px) */
-    order: 9999;
-}
-
-.w-full {
-    width: 100%;
-}
-
-.h-12 {
-    height: 3rem;
-}
-
-.w-12 {
-    width: 3rem;
-}
-
-.shrink-0 {
-    flex-shrink: 0;
-}
-
-.inset-0 {
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-}
-
-.absolute {
-    position: absolute;
-}
-
-.relative {
-    position: relative;
-}
-
-.overflow-hidden {
-    overflow: hidden;
-}
-
-/* Flex/Grid and Alignment */
-.flex {
-    display: flex;
-}
-
-.items-center {
-    align-items: center;
-}
-
-.items-start {
-    align-items: flex-start;
-}
-
-.lg\:items-center {
-    /* @media (min-width: 1024px) */
-    align-items: center;
-}
-
-.justify-center {
-    justify-content: center;
-}
-
-.self-center {
-    align-self: center;
-}
-
-.self-end {
-    align-self: flex-end;
-}
-
-/* Colors and Backgrounds */
-.bg-gradient-to-b {
-    background-image: linear-gradient(to bottom, var(--tw-gradient-stops));
-}
-
-.from-gray-50 {
-    --tw-gradient-from: #f9fafb;
-    --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgba(249, 250, 251, 0));
-}
-
-.via-white {
-    --tw-gradient-stops: var(--tw-gradient-from), #fff, var(--tw-gradient-to, rgba(255, 255, 255, 0));
-}
-
-.to-gray-50 {
-    --tw-gradient-to: #f9fafb;
-}
-
-.bg-gradient-to-r {
-    background-image: linear-gradient(to right, var(--tw-gradient-stops));
-}
-
-.from-\[\#44BCFF\] {
-    --tw-gradient-from: #44BCFF;
-    --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgba(68, 188, 255, 0));
-}
-
-.via-\[\#FF44EC\] {
-    --tw-gradient-stops: var(--tw-gradient-from), #FF44EC, var(--tw-gradient-to, rgba(255, 68, 236, 0));
-}
-
-.to-\[\#FF675E\] {
-    --tw-gradient-to: #FF675E;
-}
-
-.bg-indigo-600 {
-    background-color: #4f46e5;
-}
-
-.hover\:bg-indigo-700:hover {
-    background-color: #4338ca;
-}
-
-.text-gray-900 {
-    color: #111827;
-}
-
-.text-gray-500 {
-    color: #6b7280;
-}
-
-.text-white {
-    color: #fff;
-}
-
-/* Typography */
-.text-3xl {
-    font-size: 1.875rem;
-    line-height: 2.25rem;
-}
-
-.sm\:text-4xl {
-    /* @media (min-width: 640px) */
-    font-size: 2.25rem;
-    line-height: 2.5rem;
-}
-
-.xl\:text-5xl {
-    /* @media (min-width: 1280px) */
-    font-size: 3rem;
-    line-height: 1;
-}
-
-.text-base {
-    font-size: 1rem;
-    line-height: 1.5rem;
-}
-
-.text-xs {
-    font-size: 0.75rem;
-    line-height: 1rem;
-}
-
-.sm\:text-sm {
-    /* @media (min-width: 640px) */
-    font-size: 0.875rem;
-    line-height: 1.25rem;
-}
-
-.font-bold {
-    font-weight: 700;
-}
-
-.font-semibold {
-    font-weight: 600;
-}
-
-.font-normal {
-    font-weight: 400;
-}
-
-.uppercase {
-    text-transform: uppercase;
-}
-
-.tracking-widest {
-    letter-spacing: 0.1em;
-}
-
-.leading-7 {
-    line-height: 1.75rem;
-}
-
-.leading-6 {
-    line-height: 1.5rem;
-}
-
-/* Spacing */
-.pt-12 {
-    padding-top: 3rem;
-}
-
-.lg\:pb-20 {
-    /* @media (min-width: 1024px) */
-    padding-bottom: 5rem;
-}
-
-.px-8 {
-    padding-left: 2rem;
-    padding-right: 2rem;
-}
-
-.py-3 {
-    padding-top: 0.75rem;
-    padding-bottom: 0.75rem;
-}
-
-.sm\:py-3\.5 {
-    /* @media (min-width: 640px) */
-    padding-top: 0.875rem;
-    padding-bottom: 0.875rem;
-}
-
-.mt-5 {
-    margin-top: 1.25rem;
-}
-
-.mt-9 {
-    margin-top: 2.25rem;
-}
-
-.mt-6 {
-    margin-top: 1.5rem;
-}
-
-.ml-5 {
-    margin-left: 1.25rem;
-}
-
-.space-y-6>*+* {
-    margin-top: 1.5rem;
-}
-
-.lg\:space-y-8>*+* {
-    /* @media (min-width: 1024px) */
-    margin-top: 2rem;
-}
-
-
-/* Borders and Radius */
-.rounded-lg {
-    border-radius: 0.5rem;
-}
-
-.rounded-xl {
-    border-radius: 0.75rem;
-}
-
-.border {
-    border-width: 1px;
-}
-
-.border-transparent {
-    border-color: transparent;
-}
-
-/* Transitions and Filters */
-.transitiona-all {
-    transition-property: all;
-}
-
-.transition-all {
-    transition-property: all;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-    transition-duration: 150ms;
-}
-
-.duration-200 {
-    transition-duration: 200ms;
-}
-
-.duration-1000 {
-    transition-duration: 1000ms;
-}
-
-.blur-lg {
-    filter: blur(16px);
-}
-
-.filter {
-    filter: var(--tw-filter);
-}
-
-/* Assumes a basic filter reset */
-.opacity-70 {
-    opacity: 0.7;
-}
-
-.group:hover .group-hover\:opacity-100 {
+@keyframes slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
     opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-/* Focus Rings */
-.focus\:outline-none:focus {
-    outline: 2px solid transparent;
-    outline-offset: 2px;
+@keyframes slide-in-right {
+  from {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 
-.focus\:ring-2:focus {
-    --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
-    --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color);
-    box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
-.focus\:ring-offset-2:focus {
-    --tw-ring-offset-width: 2px;
+/* Utility Classes */
+.glow {
+  filter: drop-shadow(0 0 10px currentColor);
 }
 
-.focus\:ring-indigo-600:focus {
-    --tw-ring-color: #4f46e5;
+.float-animation {
+  animation: float 6s ease-in-out infinite;
 }
 
-/* Object Fit (as requested) */
-.object-cover {
-    object-fit: cover;
+.pulse-animation {
+  animation: pulse 2s ease-in-out infinite;
 }
-
-/* Custom utility class used to replace Alpine.js (as requested) */
-.mobile-menu {
-    /* Start collapsed */
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.3s ease-in-out;
-}
-
-.mobile-menu.is-expanded {
-    /* Expanded state (adjust max-height to a value larger than content) */
-    max-height: 500px;
-    /* Needs to be large enough to contain the content */
-}
-
-/* -------------------------------------------------------------------------- */
-/* ANIMATIONS                                  */
-/* -------------------------------------------------------------------------- */
-
-/* Define Keyframes for Slide Up */
-@keyframes slideUp {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/* Define Keyframes for Slide In from Right */
-@keyframes slideInRight {
-    from {
-        opacity: 0;
-        transform: translateX(50px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
-}
-
-/* Define Keyframes for simple Fade In */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-
-    to {
-        opacity: 1;
-    }
-}
-
-/* Animation Utility Classes */
 
 .animate-slide-up {
-    animation: slideUp 0.8s ease-out forwards;
-    opacity: 0;
-    /* Ensures the element is hidden before animation starts */
+  animation: slide-up 0.8s ease-out forwards;
 }
 
 .animate-slide-in-right {
-    animation: slideInRight 0.8s ease-out forwards;
-    opacity: 0;
+  animation: slide-in-right 0.8s ease-out forwards;
 }
 
 .animate-fade-in {
-    animation: fadeIn 0.6s ease-out forwards;
-    opacity: 0;
+  animation: fade-in 0.8s ease-out forwards;
 }
 
-/* Delay Utility Classes */
 .delay-200 {
-    animation-delay: 0.2s;
+  animation-delay: 0.2s;
 }
 
 .delay-400 {
-    animation-delay: 0.4s;
+  animation-delay: 0.4s;
 }
 
 .delay-600 {
-    animation-delay: 0.6s;
+  animation-delay: 0.6s;
 }
 
 .delay-700 {
-    animation-delay: 0.7s;
+  animation-delay: 0.7s;
 }
 
 .delay-800 {
-    animation-delay: 0.8s;
+  animation-delay: 0.8s;
 }
 
 .delay-900 {
-    animation-delay: 0.9s;
+  animation-delay: 0.9s;
 }
 
-/* Add this to the top of your hero.css file */
-.mt-nav-offset {
-    /* Large top margin to ensure content starts BELOW the fixed navbar */
-    margin-top: 6rem; /* Adjust this value based on your actual navbar height + desired gap */
+/* Responsive Adjustments */
+@media (max-width: 640px) {
+  .sci-fi-btn {
+    padding: 0.625rem 1rem;
+    font-size: 0.875rem;
+  }
+  
+  .sci-fi-card {
+    padding: 1rem;
+  }
+  
+  .pick-item {
+    padding: 0.625rem;
+  }
+  
+  .grid-overlay {
+    background-size: 30px 30px;
+  }
+  
+  .parallax-bg {
+    background-size: cover;
+  }
+  
+  .author-container {
+    min-height: 250px;
+  }
 }
 
-/* Original pt-12 (padding-top: 3rem) is too small for a fixed navbar. 
-   We will keep the utility name but increase its base value, or rely on the new utility. */
-
-/* --- Container and Grid Layout (No changes needed here for responsiveness) --- */
-/* ... (Rest of your existing CSS definitions follow below) ... */
-
-/* Spacing adjustments: Ensure pt-12 has a large base value */
-.pt-12 {
-    padding-top: 5rem; /* Increased base padding for better spacing */
+@media (min-width: 641px) and (max-width: 768px) {
+  .sci-fi-btn {
+    max-width: 350px;
+  }
+  
+  .author-container {
+    min-height: 350px;
+  }
 }
 
-.lg\:pb-20 {
-    /* @media (min-width: 1024px) */
-    padding-bottom: 5rem;
+@media (min-width: 769px) and (max-width: 1024px) {
+  .grid-overlay {
+    background-size: 40px 40px;
+  }
+  
+  .sci-fi-btn {
+    max-width: 300px;
+  }
 }
 
-/* ... (All other CSS definitions remain the same) ... */
+@media (max-width: 1024px) {
+  .hero-section {
+    padding-top: 1.5rem;
+  }
+  
+  .grid-cols-1 {
+    grid-template-columns: 1fr;
+  }
+  
+  .order-1 {
+    order: 1;
+  }
+  
+  .order-2 {
+    order: 2;
+  }
+  
+  .order-3 {
+    order: 3;
+  }
+}
 
-/* -------------------------------------------------------------------------- */
-/* ANIMATIONS                                                                 */
-/* -------------------------------------------------------------------------- */
-/* ... (Animations remain the same) ... */
+/* Image fallback styling */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Loading state */
+img:not([src]) {
+  background: linear-gradient(45deg, #0a0a1a, #1a1a3a);
+  border: 1px solid var(--neon-blue);
+}
+
+/* Improve text readability on mobile */
+@media (max-width: 768px) {
+  .text-gradient {
+    font-size: 1.75rem;
+    line-height: 1.2;
+  }
+  
+  p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+}

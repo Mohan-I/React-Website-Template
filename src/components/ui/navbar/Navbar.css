@@ -1,38 +1,42 @@
 /* --- 1. Base Navbar Styles (Centered & Sci-Fi) --- */
 .navbar {
-  /* Key Change: Perfect Horizontal Centering */
   position: fixed;
   top: 20px;
-  left: 50%; /* Start the element at 50% of the viewport width */
-  transform: translateX(-50%); /* Move it back by half its own width */
-  /* End Centering Changes */
-  
+  left: 50%;
+  transform: translateX(-50%);
+
   width: 95%;
   max-width: 1200px;
-  
-  /* Sci-Fi Backdrop: Darker and more saturated */
   backdrop-filter: blur(18px) saturate(200%);
   -webkit-backdrop-filter: blur(18px) saturate(200%);
-  background-color: rgba(9, 15, 26, 0.85); /* Deep space blue/black */
-  
+  background-color: rgba(9, 15, 26, 0.85);
   border-radius: 12px;
-  border: 1px solid rgba(0, 191, 255, 0.15); /* Subtle blue/cyan border */
-  color: #e0f7fa; /* Light cyan text */
-  box-shadow: 0 6px 20px rgba(0, 150, 255, 0.2); /* Sci-fi blue shadow */
+  border: 1px solid rgba(0, 191, 255, 0.15);
+  color: #e0f7fa;
+  /* Light cyan text */
+  box-shadow: 0 6px 20px rgba(0, 150, 255, 0.2);
+  /* Sci-fi blue shadow */
   z-index: 1000;
-  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); /* Smoother transition curve */
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  /* Smoother transition curve */
   animation: slideDown 0.6s ease forwards;
 }
 
 /* Scroll Effect - More pronounced/aggressive look when scrolled */
 .navbar.scrolled {
-  top: 0; /* Snaps to the top */
-  width: 100%; /* Full width when scrolled */
+  top: 0;
+  /* Snaps to the top */
+  width: 100%;
+  /* Full width when scrolled */
   max-width: none;
-  border-radius: 0; /* Sharp edges */
-  background-color: rgba(4, 10, 20, 0.98); /* Almost black, fully covering */
-  border-bottom: 2px solid #00c8ff; /* Distinct blue line */
-  box-shadow: 0 1px 15px rgba(0, 191, 255, 0.5); /* Stronger glow/shadow */
+  border-radius: 0;
+  /* Sharp edges */
+  background-color: rgba(4, 10, 20, 0.98);
+  /* Almost black, fully covering */
+  border-bottom: 2px solid #00c8ff;
+  /* Distinct blue line */
+  box-shadow: 0 1px 15px rgba(0, 191, 255, 0.5);
+  /* Stronger glow/shadow */
 }
 
 .navbar-container {
@@ -53,10 +57,12 @@
 }
 
 .logo {
-  width: 45px; /* Slightly larger logo */
+  width: 45px;
+  /* Slightly larger logo */
   height: 45px;
   object-fit: contain;
-  filter: drop-shadow(0 0 4px rgba(0, 220, 255, 0.7)); /* Logo glow */
+  filter: drop-shadow(0 0 4px rgba(0, 220, 255, 0.7));
+  /* Logo glow */
   transition: transform 0.3s ease;
 }
 
@@ -67,8 +73,10 @@
 .brand-name {
   font-size: 1.4rem;
   font-weight: 800;
-  color: #00c8ff; /* Sci-fi primary color */
-  letter-spacing: 0.05rem; /* Wider tracking for a tech look */
+  color: #00c8ff;
+  /* Sci-fi primary color */
+  letter-spacing: 0.05rem;
+  /* Wider tracking for a tech look */
   text-shadow: 0 0 5px rgba(0, 220, 255, 0.5);
   transition: color 0.3s ease;
 }
@@ -77,13 +85,14 @@
 .navbar-links {
   display: flex;
   align-items: center;
-  gap: 1.5rem; /* Increased spacing */
+  gap: 1.5rem;
+  /* Increased spacing */
 }
 
 .nav-link {
   color: #e0f7fa;
   text-decoration: none;
-  padding: 0.5rem 0.5rem; 
+  padding: 0.5rem 0.5rem;
   font-family: 'mindscape';
   font-size: 1rem;
   font-weight: 500;
@@ -92,25 +101,26 @@
 }
 
 .nav-link:hover {
-  color: #00c8ff; /* Sci-fi link hover color */
+  color: #00c8ff;
+  /* Sci-fi link hover color */
   text-shadow: 0 0 8px rgba(0, 191, 255, 0.6);
 }
 
 /* Sci-fi underline effect */
 .nav-link::after {
-    content: '';
-    position: absolute;
-    bottom: -5px;
-    left: 50%;
-    transform: translateX(-50%) scaleX(0);
-    width: 100%;
-    height: 2px;
-    background-color: #00c8ff;
-    transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 50%;
+  transform: translateX(-50%) scaleX(0);
+  width: 100%;
+  height: 2px;
+  background-color: #00c8ff;
+  transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
 .nav-link:hover::after {
-    transform: translateX(-50%) scaleX(1);
+  transform: translateX(-50%) scaleX(1);
 }
 
 
@@ -122,9 +132,11 @@
 }
 
 .nav-button {
-  background-color: #007bff; /* Primary blue button color */
+  background-color: #007bff;
+  /* Primary blue button color */
   color: #ffffff;
-  padding: 0.6rem 1.2rem; /* Slightly larger button */
+  padding: 0.6rem 1.2rem;
+  /* Slightly larger button */
   border-radius: 4px;
   text-decoration: none;
   font-weight: 600;
@@ -133,7 +145,8 @@
 }
 
 .nav-button:hover {
-  background-color: #00c8ff; /* Brighter sci-fi button hover */
+  background-color: #00c8ff;
+  /* Brighter sci-fi button hover */
   transform: translateY(-2px);
   box-shadow: 0 5px 15px rgba(0, 191, 255, 0.4);
 }
@@ -158,7 +171,8 @@
   display: block;
   height: 3px;
   width: 100%;
-  background: #00c8ff; /* Sci-fi toggle color */
+  background: #00c8ff;
+  /* Sci-fi toggle color */
   border-radius: 2px;
   transition: all 0.3s ease;
   transform-origin: center;
@@ -188,23 +202,24 @@
     left: 50%;
     transform: translateX(-50%);
   }
-  
+
   .navbar-container {
     padding: 0.75rem 1rem;
   }
-  
+
   .navbar-toggle {
     display: flex;
   }
-  
+
   .navbar-links {
     position: fixed;
     top: 0;
     right: 0;
-    width: 280px; /* Slightly wider mobile menu */
+    width: 280px;
+    /* Slightly wider mobile menu */
     height: 100vh;
     /* Dark Sci-Fi background for mobile menu */
-    background-color: rgba(4, 10, 20, 0.98); 
+    background-color: rgba(4, 10, 20, 0.98);
     border-left: 1px solid #00c8ff;
     flex-direction: column;
     justify-content: flex-start;
@@ -212,25 +227,29 @@
     padding: 80px 1.5rem 2rem;
     gap: 0;
     transform: translateX(100%);
-    transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.5, 1); /* Snappy transition */
-    box-shadow: -5px 0 20px rgba(0, 191, 255, 0.4); /* Menu glow */
+    transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.5, 1);
+    /* Snappy transition */
+    box-shadow: -5px 0 20px rgba(0, 191, 255, 0.4);
+    /* Menu glow */
   }
-  
+
   .navbar-links.active {
     transform: translateX(0);
   }
-  
+
   .nav-link {
     padding: 1rem 0.5rem;
     font-size: 1.1rem;
     color: #e0f7fa;
-    border-bottom: 1px solid rgba(0, 191, 255, 0.1); /* Subtle blue divider */
+    border-bottom: 1px solid rgba(0, 191, 255, 0.1);
+    /* Subtle blue divider */
     border-radius: 0;
     text-align: left;
   }
-  
+
   .nav-link:hover {
-    background-color: rgba(0, 191, 255, 0.1); /* Blue hover background */
+    background-color: rgba(0, 191, 255, 0.1);
+    /* Blue hover background */
     color: #00c8ff;
   }
 
@@ -238,13 +257,13 @@
   .nav-link::after {
     content: none;
   }
-  
+
   .nav-extra {
     margin-top: 2rem;
     flex-direction: column;
     align-items: stretch;
   }
-  
+
   .nav-button {
     text-align: center;
     margin-bottom: 0.5rem;
@@ -254,9 +273,11 @@
 /* --- Animation and Accessibility --- */
 @keyframes slideDown {
   from {
-    transform: translate(-50%, -100px); /* Adjust starting position for smooth animation */
+    transform: translate(-50%, -100px);
+    /* Adjust starting position for smooth animation */
     opacity: 0;
   }
+
   to {
     transform: translate(-50%, 0);
     opacity: 1;

@@ -1,25 +1,122 @@
-.back-to-top {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background-color: #007bff;
-    color: #fff;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-  }
-  
-  .back-to-top.visible {
-    opacity: 1;
-  }
-  
-  .back-to-top i {
-    font-size: 20px;
-  }
-  
+.cyber-back-to-top {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  z-index: 999;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transform: scale(0.5) translateY(20px);
+}
+
+.cyber-back-to-top.visible {
+  opacity: 1;
+  visibility: visible;
+  transform: scale(1) translateY(0);
+}
+
+/* The Button Base */
+.cyber-btn {
+  width: 60px;
+  height: 60px;
+  background-color: #0a0a0a;
+  color: #00f3ff;
+  border: 1px solid rgba(0, 243, 255, 0.3);
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 1px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Top and Bottom Animated Borders */
+.cyber-btn:before, .cyber-btn:after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  background-color: #00f3ff;
+  box-shadow: 0 0 10px #00f3ff;
+  transition: all 0.4s ease;
+}
+
+.cyber-btn:before { right: 0; top: 0; }
+.cyber-btn:after { left: 0; bottom: 0; }
+
+/* Left and Right Animated Borders */
+.cyber-btn span:before, .cyber-btn span:after {
+  content: "";
+  position: absolute;
+  width: 2px;
+  height: 0;
+  background-color: #00f3ff;
+  box-shadow: 0 0 10px #00f3ff;
+  transition: all 0.4s ease;
+}
+
+.cyber-btn span:before { right: 0; top: 0; }
+.cyber-btn span:after { left: 0; bottom: 0; }
+
+/* Text Container */
+.cyber-btn p {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  z-index: 2;
+}
+
+.cyber-btn p:before {
+  content: attr(data-title);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: all 0.3s ease;
+}
+
+.cyber-btn p:after {
+  content: attr(data-text);
+  position: absolute;
+  top: 150%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #ff00ff; /* Neon Pink for the hover text */
+  text-shadow: 0 0 8px #ff00ff;
+  transition: all 0.3s ease;
+}
+
+/* Hover States */
+.cyber-btn:hover:before, .cyber-btn:hover:after { width: 100%; }
+.cyber-btn:hover span:before, .cyber-btn:hover span:after { height: 100%; }
+
+.cyber-btn:hover p:before {
+  top: -50%;
+  opacity: 0;
+}
+
+.cyber-btn:hover p:after {
+  top: 50%;
+}
+
+.cyber-btn:hover {
+  box-shadow: 0 0 20px rgba(0, 243, 255, 0.4);
+  background-color: #111;
+}
+
+/* Subtle Flicker Animation */
+@keyframes glitch-flicker {
+  0% { opacity: 0.1; }
+  50% { opacity: 0.2; }
+  100% { opacity: 0.1; }
+}
+
+.cyber-btn:active {
+  transform: scale(0.9);
+  filter: brightness(1.2);
+}

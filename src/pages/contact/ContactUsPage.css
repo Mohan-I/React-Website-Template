@@ -1,118 +1,130 @@
-.contact-us-page {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  .contact-info {
-    text-align: center;
-    margin-bottom: 20px;
-  }
-  
-  .map img {
-    width: 100%; /* Adjust width of map image */
-    max-width: 600px; /* Adjust max-width of map image */
-    height: auto;
-  }
-  * {
-    box-sizing: border-box;
-  }
-  
-  body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    zoom:95%;
-  }
-  
-  p{
-    padding: 0.4em;
-  }
-  
-  .dark-mode {
-    background-color: #333;
-    color: #fff;
-  }
-  
-  .light-mode {
-    background-color: #fff;
-    color: #333;
-  }
-  
-  header {
-    padding: 20px;
-  }
-  
-  main {
-    padding: 0.5em;
-  }
-  
-  button {
-    padding: 12px 26px;
-    color: #fff;
-    border: 0;
-    font-weight: bold;
-    font-size: 16px;
-    transition: all 150ms ease-in-out;
-  
-    border-radius: 12px;
-    box-shadow: rgba(255, 255, 255, 0.2) 0 1px 0 0 inset;
-    background-color: #1A1B1D;
-    background-image: linear-gradient(180deg, rgba(206, 211, 234, 0.07) 0%, transparent 100%);
-  }
-  
-  button:hover {
-    filter: brightness(1.1);
-  }
-  
-  .button:active {
-    transform: scale(.95);
-  }
-  
-  
-  .container {
-    display: flex;
-    justify-content: space-between;
-  }
-  
-  .left {
-    /* Add styles for the left container */
-    width:8%;
-    padding: 0.1em;
-  }
-  
-  .right {
-    /* Add styles for the right container */
-    width:92%;
-    padding: 0.1em;
-  }
-  
-  /* Create two equal columns that floats next to each other */
-  .column {
-    float: left;
-    width: 50%;
-    padding: 10px;
-    height: 300px; /* Should be removed. Only for demonstration */
-  }
-  
-  /* Clear floats after the columns */
-  .row:after {
-    content: "";
-    display: table;
-    clear: both;
-  }
-  
-  /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
-  @media screen and (max-width: 600px) {
-    .column {
-      width: 100%;
-    }
-  }
-  
-  .writer2{
-    font-size: 2.0em;
-    font-style: oblique;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    padding: 0.4em;
-  }
-  
-  
+:root {
+  --neon-pink: #ff00ff;
+  --neon-cyan: #00ffff;
+  --dark-bg: #0a0a0c;
+  --card-bg: rgba(20, 20, 25, 0.8);
+}
+
+.cyber-container {
+  background-color: var(--dark-bg);
+  background-image: 
+    linear-gradient(rgba(0, 255, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 255, 255, 0.05) 1px, transparent 1px);
+  background-size: 30px 30px; /* Grid background */
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.contact-wrapper {
+  width: 90%;
+  max-width: 1000px;
+  padding: 40px;
+}
+
+/* Neon Glitch Heading */
+.glitch-text {
+  font-size: 2rem;
+  text-transform: uppercase;
+  color: var(--neon-cyan);
+  text-shadow: 2px 2px var(--neon-pink);
+  letter-spacing: 5px;
+  margin-bottom: 50px;
+  border-left: 5px solid var(--neon-pink);
+  padding-left: 15px;
+  padding-top: 50px;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 40px;
+}
+
+/* Info Card Styling */
+.info-card {
+  background: var(--card-bg);
+  border: 1px solid var(--neon-cyan);
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.2);
+  clip-path: polygon(0 0, 100% 0, 100% 85%, 85% 100%, 0 100%);
+}
+
+.card-header {
+  background: var(--neon-cyan);
+  color: #000;
+  padding: 10px;
+  font-weight: bold;
+}
+
+.card-body {
+  padding: 20px;
+}
+
+.info-item {
+  margin-bottom: 20px;
+}
+
+.label {
+  display: block;
+  color: var(--neon-pink);
+  font-size: 0.8rem;
+}
+
+/* Form Styling */
+.input-group {
+  margin-bottom: 25px;
+  position: relative;
+}
+
+input, textarea {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.05);
+  border: none;
+  border-bottom: 2px solid #333;
+  padding: 12px;
+  color: var(--neon-cyan);
+  outline: none;
+  transition: 0.3s;
+}
+
+input:focus, textarea:focus {
+  background: rgba(0, 255, 255, 0.05);
+}
+
+.bar {
+  height: 2px;
+  width: 0%;
+  background: var(--neon-cyan);
+  transition: 0.4s;
+}
+
+input:focus ~ .bar, textarea:focus ~ .bar {
+  width: 100%;
+}
+
+/* Cyber Button */
+.cyber-btn {
+  background: transparent;
+  color: var(--neon-pink);
+  border: 2px solid var(--neon-pink);
+  padding: 15px 30px;
+  cursor: pointer;
+  font-weight: bold;
+  text-transform: uppercase;
+  transition: 0.3s;
+  position: relative;
+}
+
+.cyber-btn:hover {
+  background: var(--neon-pink);
+  color: #000;
+  box-shadow: 0 0 20px var(--neon-pink);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .contact-grid { grid-template-columns: 1fr; }
+}

@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./Navbar.css";
 import { NavLink } from "react-router-dom"
-// import SearchBar from "../../searchbar/SearchBar"; // Removed SearchBar import
-import img from '../../../assets/images/world.png'; // Assuming 'world.png' is your generic logo
+import img from '../../../assets/images/logo.png';
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -75,7 +74,6 @@ function Navbar() {
           ))}
           
           <div className="nav-extra">
-            {/* Added a simple utility link as an example */}
             <NavLink to="/login" className="nav-button">Login</NavLink>
             <NavLink to="/signup" className="nav-button">Sign Up</NavLink>
           </div>

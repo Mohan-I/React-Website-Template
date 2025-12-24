@@ -1,51 +1,53 @@
 import React from "react";
-import "./ContactUsPage.css"; // Include your CSS file for styling
-//import mapImage from "../components/assets/images/world.png";
-// Import your map image
+import "./ContactUsPage.css";
 
 function ContactUsPage() {
-  const [isDarkMode, setIsDarkMode] = useState(false);
-
-  const toggleDarkMode = () => {
-    setIsDarkMode(!isDarkMode);
-  };
   return (
-    <>
-      <div
-        className={`ContactUsPage ${isDarkMode ? "dark-mode" : "light-mode"}`}
-      >
-        <header>
-          <div className="container">
-            <div className="left">
-              <button onClick={toggleDarkMode}>
-                {isDarkMode ? "🌕" : "🌙"}
-              </button>
+    <div className="cyber-container">
+      <main className="contact-wrapper">
+        <h1 className="glitch-text" data-text="TRANSMISSION_INIT">CONTACT<br />_US</h1>
+        
+        <div className="contact-grid">
+          {/* Contact Info Card */}
+          <div className="info-card">
+            <div className="card-header">SYSTEM_INFO</div>
+            <div className="card-body">
+              <div className="info-item">
+                <span className="label">EMAIL:</span>
+                <span className="value">info@neon-net.io</span>
+              </div>
+              <div className="info-item">
+                <span className="label">VOICE:</span>
+                <span className="value">+1 (123) 456-7890</span>
+              </div>
+              <div className="info-item">
+                <span className="label">LOC:</span>
+                <span className="value">Sector 7, Night City</span>
+              </div>
             </div>
+          </div>
 
-            <div className="right">
-              <Navbar />
+          {/* Contact Form */}
+          <form className="contact-form">
+            <div className="input-group">
+              <input type="text" placeholder="USER_ID" required />
+              <div className="bar"></div>
             </div>
-          </div>
-        </header>
-        <main>
-          {/* The content must go here */}
-          <Banner />
-          <div className="contact-us-page">
-            <div className="contact-info">
-              <h2>Contact Us</h2>
-              <p>Email: info@example.com</p>
-              <p>Phone: +1 (123) 456-7890</p>
-              <p>Address: 123 Main Street, City, Country</p>
+            <div className="input-group">
+              <input type="email" placeholder="ENCRYPTED_MAIL" required />
+              <div className="bar"></div>
             </div>
-            <div className="map">
-             {/* // <img src={mapImage} alt="Map" /> */}
+            <div className="input-group">
+              <textarea placeholder="SECURE_MESSAGE" rows="4"></textarea>
+              <div className="bar"></div>
             </div>
-          </div>
-        </main>
-        <Footer />
-        <BackToTop />
-      </div>
-    </>
+            <button type="submit" className="cyber-btn">
+              SEND_SIGNAL
+            </button>
+          </form>
+        </div>
+      </main>
+    </div>
   );
 }
 
